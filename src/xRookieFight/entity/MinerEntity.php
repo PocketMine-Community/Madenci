@@ -4,6 +4,7 @@ namespace xRookieFight\entity;
 
 use Closure;
 use pocketmine\entity\Human;
+use pocketmine\entity\Skin;
 use pocketmine\nbt\tag\CompoundTag;
 use xRookieFight\Main;
 use xRookieFight\task\MinerTask;
@@ -90,6 +91,12 @@ class MinerEntity extends Human {
             ($this->taskHandler)();
         }
         parent::flagForDespawn();
+    }
+	
+	public function changeSkin(Skin $skin): void
+    {
+        $this->setSkin($skin);
+        $this->sendSkin();
     }
 
 }

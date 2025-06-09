@@ -4,9 +4,11 @@ namespace xRookieFight\forms;
 
 use pocketmine\form\Form;
 use pocketmine\player\Player;
+use pocketmine\world\sound\XpLevelUpSound;
 use xRookieFight\entity\MinerEntity;
 use xRookieFight\Main;
 use xRookieFight\Manager;
+use xRookieFight\forms\MinerSkinForm;
 
 class MinerMainForm implements Form
 {
@@ -48,9 +50,10 @@ class MinerMainForm implements Form
 
                 $player->sendForm(new MinerUpgradeForm($this->miner));
                 break;
-            case 1:
-
-                break;
+			case 1:
+				$this->miner->changeSkin($player->getSkin());
+				$player->sendMessage("§aMadencinin görünüşü başarıyla değiştirildi.");
+				break;
             case 2:
                 $item = Manager::getMinerEgg($this->miner->getLevel());
                 $this->miner->getWorld()->dropItem($this->miner->getPosition(), $item);
