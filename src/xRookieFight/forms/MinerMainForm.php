@@ -4,11 +4,9 @@ namespace xRookieFight\forms;
 
 use pocketmine\form\Form;
 use pocketmine\player\Player;
-use pocketmine\world\sound\XpLevelUpSound;
 use xRookieFight\entity\MinerEntity;
 use xRookieFight\Main;
 use xRookieFight\Manager;
-use xRookieFight\forms\MinerSkinForm;
 
 class MinerMainForm implements Form
 {
