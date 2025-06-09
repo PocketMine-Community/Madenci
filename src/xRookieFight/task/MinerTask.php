@@ -22,8 +22,13 @@ class MinerTask extends Task
 
     function onRun() : void {
         $miner = $this->miner;
-        $world = $miner->getWorld();
-        $position = $miner->getPosition();
+
+        try {
+            $position = $miner->getPosition();
+            $world = $miner->getWorld();
+        } catch (\Throwable $e) {
+            return;
+        }
 
         $level = $miner->getLevel();
         $radius = min(7, 3 + ($level * 2));
