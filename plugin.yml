@@ -1,0 +1,13 @@
+name: Madenci
+main: xRookieFight\Main
+version: 1.0.0
+api: 5.0.0
+author: xRookieFight
+
+commands:
+  madenciver:
+    permission: madenciver.cmd
+
+permissions:
+  madenciver.cmd:
+    default: op
